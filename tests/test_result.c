@@ -1,14 +1,9 @@
-#include <assert.h>
 #include <string.h>
 #include <stdlib.h>
 
 #include "../src/result.h"
 
-#define TEST(Name, Subname) void test_##Name##_##Subname()
-#define RUN_TEST(Name, Subname) test_##Name##_##Subname()
-
-#define ASSERT_TRUE(Exp) assert(Exp)
-#define ASSERT_EQ(Lhs, Rhs) assert(Lhs == Rhs)
+#include "test_asserts.h"
 
 RES_DECLARE(result, unsigned long, char *)
 RES_DEFINE(result, unsigned long, char *)

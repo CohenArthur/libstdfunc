@@ -1,12 +1,7 @@
-#include <assert.h>
 #include <string.h>
 #include "../src/option.h"
 
-#define TEST(Name, Subname) void test_##Name##_##Subname()
-#define RUN_TEST(Name, Subname) test_##Name##_##Subname()
-
-#define ASSERT_TRUE(Exp) assert(Exp)
-#define ASSERT_EQ(Lhs, Rhs) assert(Lhs == Rhs)
+#include "test_asserts.h"
 
 OPT_DECLARE(option_not_int, int);
 OPT_DEFINE(option_not_int, int)
