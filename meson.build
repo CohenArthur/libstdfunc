@@ -22,9 +22,7 @@ stdfunc_dep = declare_dependency(link_with: stdfunc_so)
 foreach test_src: tests
   bin = executable('bin' + test_src, 'tests/' + test_src,
     dependencies: [
-      stdfunc_dep]
-      )
-  test('bin' + test_src, bin, args: [
-    '--gtest_color=yes',
-    ])
+      stdfunc_dep
+      ])
+  test('bin' + test_src, bin)
 endforeach
