@@ -1,4 +1,4 @@
-project('std_func', 'c',
+project('stdfunc', 'c',
   default_futures: [
   'warning_level=3',
   'debug=true',
@@ -12,16 +12,17 @@ src = [
 tests = [
   'test_option.c',
   'test_result.c',
+  'test_map.c',
 ]
 
-std_func_so = library('std_func', src)
+stdfunc_so = library('stdfunc', src)
 
-std_func_dep = declare_dependency(link_with: std_func_so)
+stdfunc_dep = declare_dependency(link_with: stdfunc_so)
 
 foreach test_src: tests
   bin = executable('bin' + test_src, 'tests/' + test_src,
     dependencies: [
-      std_func_dep]
+      stdfunc_dep]
       )
   test('bin' + test_src, bin, args: [
     '--gtest_color=yes',
