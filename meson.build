@@ -10,9 +10,10 @@ src = [
 ]
 
 tests = [
-  'test_option.c',
-  'test_result.c',
   'test_map.c',
+  'test_option.c',
+  'test_pair.c',
+  'test_result.c',
 ]
 
 stdfunc_so = library('stdfunc', src)
